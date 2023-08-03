@@ -1,2 +1,2 @@
-![Exercises](/Lesson%201/Exercises/1.png)
-![Exercises](/Lesson%201/Exercises/2.png)
+![Exercises](/Lesson%201/Ignore/1.png)
+![Exercises](/Lesson%201/Ignore/2.png)
