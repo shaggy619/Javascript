@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dummy Rock Scissors Paper Game</title>
+  </head>
+  <body>
+    <h3>Let's play the Game!</h3>
+    <p>Choose one option:</p>
+    <button
+      onclick="
+    randomNumber = Math.random();
+    console.log(randomNumber);
+    if(randomNumber >=0 && randomNumber < 0.33)
+    {
+        move = 'Rock';
+    }
+    else if(randomNumber >=0.33 && randomNumber < 0.66)
+    {
+        move = 'Scissor';
+    }
+    else {
+        move = 'Paper'
+    }
+    console.log(move);
+    if(move == 'Rock')
+    {
+        result = 'the game is draw!';
+    }
+    else if(move == 'Paper')
+    {
+        result = 'you lost the game!';
+    }
+    else
+    {
+        result = 'you won the game!';
+    }
+    alert(`You chose Rock. The computer chose ${move}. So, ${result}`);
+    "
+    >
+      Rock
+    </button>
+    <button
+      onclick="
+    randomNumber = Math.random();
+    console.log(randomNumber);
+    if(randomNumber >=0 && randomNumber < 0.33)
+    {
+        move = 'Rock';
+    }
+    else if(randomNumber >=0.33 && randomNumber < 0.66)
+    {
+        move = 'Scissor';
+    }
+    else {
+        move = 'Paper'
+    }
+    console.log(move);
+    if(move == 'Rock')
+    {
+        result = 'you lost the game!';
+    }
+    else if(move == 'Paper')
+    {
+        result = 'you won the game!';
+    }
+    else
+    {
+        result = 'the game is draw!';
+    }
+    alert(`You chose Scissor. The computer chose ${move}. So, ${result}`);
+    "
+    >
+      Scissor
+    </button>
+    <button
+      onclick="
+    randomNumber = Math.random();
+    console.log(randomNumber);
+    if(randomNumber >=0 && randomNumber < 0.33)
+    {
+        move = 'Rock';
+    }
+    else if(randomNumber >=0.33 && randomNumber < 0.66)
+    {
+        move = 'Scissor';
+    }
+    else {
+        move = 'Paper'
+    }
+    console.log(move);
+    if(move == 'Rock')
+    {
+        result = 'you won the game!';
+    }
+    else if(move == 'Paper')
+    {
+        result = 'the game is draw!';
+    }
+    else
+    {
+        result = 'you lost the game!';
+    }
+    alert(`You chose Paper. The computer chose ${move}. So, ${result}`);
+    "
+    >
+      Paper
+    </button>
+    <script>
+      let randomNumber = " ";
+      let move = "";
+      let result = "";
+    </script>
+  </body>
+</html>
