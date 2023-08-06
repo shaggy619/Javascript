@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dummy Amazon Improved</title>
+  </head>
+  <body>
+    <button
+      onclick="
+      console.log(`Cart Quantity: ${quantity}`);
+      "
+    >
+      Show Quantity
+    </button>
+    <button
+      onclick="
+        updateQuantity(1);
+    "
+    >
+      Add to Cart
+    </button>
+    <button
+      onclick="
+        updateQuantity(-1);
+    "
+    >
+      Remove from Cart
+    </button>
+    <button
+      onclick=" 
+      updateQuantity(2)
+    "
+    >
+      +2
+    </button>
+    <button
+      onclick="
+       updateQuantity(3);
+    "
+    >
+      +3
+    </button>
+    <button
+      onclick=" 
+      updateQuantity(-2);  
+    "
+    >
+      -2
+    </button>
+    <button
+      onclick="
+     updateQuantity(-3); 
+    "
+    >
+      -3
+    </button>
+    <button
+      onclick="
+       updateQuantity(4);
+    "
+    >
+      +4
+    </button>
+    <button
+      onclick="
+       updateQuantity(5); 
+    "
+    >
+      +5
+    </button>
+    <button
+      onclick="
+      console.log('Cart was reset!');
+      console.log(`Cart Quantity: ${quantity = 0}`);   
+    "
+    >
+      Reset Cart
+    </button>
+    <script>
+      let quantity = 0;
+      function updateQuantity(value) {
+        if (quantity + value > 10) {
+          alert("The cart is full!");
+        } else if (quantity + value < 0) {
+          alert("Not enought items in the cart!");
+        } else {
+          console.log(`Cart Quantity: ${(quantity += value)}`);
+        }
+      }
+    </script>
+  </body>
+</html>
