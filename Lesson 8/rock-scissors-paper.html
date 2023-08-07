@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Improved Rock, Scissor and Paper</title>
+  </head>
+  <body>
+    <h3>Let's play the Game!</h3>
+    <p>Choose one option:</p>
+    <button
+      onclick="
+      computerMove();
+      playGame('Rock');
+    "
+    >
+      Rock
+    </button>
+    <button
+      onclick="
+      computerMove();
+      playGame('Scissor');
+
+    "
+    >
+      Scissor
+    </button>
+    <button
+      onclick="
+      computerMove();
+      playGame('Paper');
+    "
+    >
+      Paper
+    </button>
+    <button
+      onclick="
+    "
+    >
+      Reset
+    </button>
+    <script>
+      let randomNumber = " ";
+      let move = "";
+      let result = "";
+      let overallResult = "";
+      let score = "";
+
+      //Using localStorage to save the file in local memory and doesn't change the result even after the page is reloaded
+      localStorage.setItem("score", JSON.stringify(score));
+      score = JSON.parse(localStorage.getItem("score"));
+
+      if (score === null) {
+        score = {
+          wins: 0,
+          losses: 0,
+          draws: 0,
+        };
+      }
+
+      //For computer move
+      function computerMove() {
+        randomNumber = Math.random();
+        console.log(randomNumber);
+        if (randomNumber >= 0 && randomNumber < 0.33) {
+          move = "Rock";
+        } else if (randomNumber >= 0.33 && randomNumber < 0.66) {
+          move = "Scissor";
+        } else {
+          move = "Paper";
+        }
+        console.log(move);
+      }
+
+      //To calculate the result
+      function playGame(playerMove) {
+        if (playerMove === "Scissor") {
+          if (move == "Rock") {
+            result = "you lost the game!";
+          } else if (move == "Paper") {
+            result = "you won the game!";
+          } else {
+            result = "the game is draw!";
+          }
+        } else if (playerMove === "Rock") {
+          if (move == "Rock") {
+            result = "the game is draw!";
+          } else if (move == "Paper") {
+            result = "you lost the game!";
+          } else {
+            result = "you won the game!";
+          }
+        } else {
+          if (move == "Rock") {
+            result = "you won the game!";
+          } else if (move == "Paper") {
+            result = "the game is draw!";
+          } else {
+            result = "you lost the game!";
+          }
+        }
+
+        //To calculate the overall result of wins, losses and draws
+        if (result === "you won the game!") {
+          score.wins += 1;
+        } else if (result === "you lost the game!") {
+          score.losses += 1;
+        } else {
+          score.draws += 1;
+        }
+
+        //Display the overall result as alert
+        alert(
+          `You chose ${playerMove}. The computer chose ${move}. So, ${result}
+      Wins:${score.wins} Losses:${score.losses} Draws:${score.draws}`
+        );
+      }
+    </script>
+  </body>
+</html>
