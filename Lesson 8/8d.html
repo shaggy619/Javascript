@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compare Object Price</title>
+  </head>
+  <body>
+    <script>
+      let product = {
+        product1: {
+          name: "basketball",
+          price: 2095 * 0.01,
+        },
+        product2: {
+          name: "t-shirt",
+          price: 3000 * 0.01,
+        },
+        fun: function comparePrice() {
+          if (product.product2.price > product.product1.price) {
+            console.log(
+              `${product.product2.name} is expensive than ${product.product1.name}`
+            );
+          } else {
+            console.log(
+              `${product.product1.name} is expensive than ${product.product2.name}`
+            );
+          }
+        },
+      };
+      product.fun();
+    </script>
+  </body>
+</html>
