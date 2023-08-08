@@ -36,6 +36,10 @@
     </button>
     <button
       onclick="
+      console.log('The score was reset successfully!')
+      score.wins = 0;
+      score.losses = 0;
+      score.draws = 0;
     "
     >
       Reset
@@ -45,19 +49,12 @@
       let move = "";
       let result = "";
       let overallResult = "";
-      let score = "";
-
-      //Using localStorage to save the file in local memory and doesn't change the result even after the page is reloaded
-      localStorage.setItem("score", JSON.stringify(score));
-      score = JSON.parse(localStorage.getItem("score"));
-
-      if (score === null) {
-        score = {
-          wins: 0,
-          losses: 0,
-          draws: 0,
-        };
-      }
+      //To use value stored in local storage to be loaded first and if the score is null then use the default value as 0.
+      let score = JSON.parse(localStorage.getItem("score")) || {
+        wins: 0,
+        losses: 0,
+        draws: 0,
+      };
 
       //For computer move
       function computerMove() {
@@ -110,10 +107,13 @@
           score.draws += 1;
         }
 
+        //To save the score in local storage
+        localStorage.setItem("score", JSON.stringify(score)); //We can only store strings as local storage so we need to convert any value into string to store value in local storage.
+
         //Display the overall result as alert
         alert(
           `You chose ${playerMove}. The computer chose ${move}. So, ${result}
-      Wins:${score.wins} Losses:${score.losses} Draws:${score.draws}`
+Wins:${score.wins} Losses:${score.losses} Draws:${score.draws}`
         );
       }
     </script>
