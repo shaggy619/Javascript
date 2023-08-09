@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Backflip using Ternary operator</title>
+  </head>
+  <body>
+    <button onclick="playGame('Heads')">Heads</button>
+    <button onclick="playGame('Tails')">Tails</button>
+    <script>
+      function playGame(guess) {
+        let randomNumber = Math.random();
+        let result = " ";
+        randomNumber < 0.5 ? (result = "Heads") : (result = "Tails");
+        guess === result ? console.log("You win!") : console.log("You lose!");
+      }
+    </script>
+  </body>
+</html>
