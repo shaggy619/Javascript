@@ -7,6 +7,7 @@
     <title>Calculator</title>
   </head>
   <body>
+    <p class="display-paragraph"></p>
     <p>
       <button
         onclick="
@@ -31,7 +32,7 @@
       </button>
       <button
         onclick="
-    updateCalculation('+');
+    updateCalculation(' + ');
     "
       >
         +
@@ -61,7 +62,7 @@
       </button>
       <button
         onclick="
-    updateCalculation('-');
+    updateCalculation(' - ');
     "
       >
         -
@@ -77,7 +78,7 @@
       </button>
       <button
         onclick="
-    console.log(calculation += '8');
+    updateCalculation('8');
     "
       >
         8
@@ -91,7 +92,7 @@
       </button>
       <button
         onclick="
-    updateCalculation('*');
+    updateCalculation(' * ');
     "
       >
         *
@@ -114,7 +115,7 @@
       </button>
       <button
         onclick="
-    updateCalculation('/');
+    updateCalculation(' / ');
     "
       >
         /
@@ -123,7 +124,7 @@
         onclick="
     eval(calculation);
     calculation = eval(calculation);
-    console.log(calculation);
+    outputParagraph.innerHTML = (calculation);
     localStorage.setItem('calculation', calculation);
     "
       >
@@ -133,18 +134,18 @@
     <p>
       <button
         onclick="
-        console.log('Cleared!');
-        calculation = '';
+                outputParagraph.innerHTML = (calculation = '');
         "
       >
         Clear
       </button>
     </p>
     <script>
+      let outputParagraph = document.querySelector(".display-paragraph");
       let calculation = localStorage.getItem("calculation");
-
+      updateCalculation("");
       function updateCalculation(value) {
-        console.log((calculation += value));
+        outputParagraph.innerHTML = calculation += value;
         localStorage.setItem("calculation", calculation);
       }
     </script>
