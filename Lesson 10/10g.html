@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On off button</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button
+      onclick="
+    isToggled('.js-10di');
+    "
+      class="js-10di css-10d"
+    >
+      Gaming
+    </button>
+    <button
+      onclick="
+    isToggled('.js-10dii');
+    "
+      class="js-10dii css-10d"
+    >
+      Music
+    </button>
+    <button
+      onclick="
+    isToggled('.js-10diii');
+    "
+      class="js-10diii css-10d"
+    >
+      Tech
+    </button>
+    <script>
+      function isToggled(selector) {
+        let btnD = document.querySelector(selector);
+        if (!btnD.classList.contains("is-clicked")) {
+          isActive();
+          btnD.classList.add("is-clicked");
+        } else {
+          btnD.classList.remove("is-clicked");
+        }
+      }
+
+      function isActive() {
+        let previousButton = document.querySelector(".is-clicked");
+        if (previousButton) {
+          previousButton.classList.remove("is-clicked");
+        }
+      }
+    </script>
+  </body>
+</html>

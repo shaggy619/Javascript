@@ -31,3 +31,8 @@ body {
   padding: 12px 15px;
   cursor: pointer;
 }
+
+/* Error message */
+.error-message {
+  color: red;
+}

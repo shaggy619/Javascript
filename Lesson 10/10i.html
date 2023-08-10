@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: black;
+        color: white;
+      }
+      .display-paragraph {
+        font-size: 32px;
+      }
+      button {
+        height: 60px;
+        width: 60px;
+        background-color: rgb(56, 56, 56);
+        font-size: 24px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        color: white;
+        margin-left: 5px;
+      }
+      .operator {
+        background-color: rgb(255, 128, 0);
+      }
+      .clear {
+        font-size: 16px;
+      }
+      .mazak {
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="mazak">संयम अधीकारीद्वारा निर्मित क्यालकुलेटर!</p>
+    <p class="display-paragraph"></p>
+    <p>
+      <button
+        onclick="
+    updateCalculation('1');
+    "
+      >
+        1
+      </button>
+      <button
+        onclick="
+    updateCalculation('2');
+    "
+      >
+        2
+      </button>
+      <button
+        onclick="
+    updateCalculation('3');
+    "
+      >
+        3
+      </button>
+      <button
+        onclick="
+    updateCalculation(' + ');
+    "
+        class="operator"
+      >
+        +
+      </button>
+    </p>
+    <p>
+      <button
+        onclick="
+    updateCalculation('4');
+    "
+      >
+        4
+      </button>
+      <button
+        onclick="
+    updateCalculation('5');
+    "
+      >
+        5
+      </button>
+      <button
+        onclick="
+    updateCalculation('6');
+    "
+      >
+        6
+      </button>
+      <button
+        onclick="
+    updateCalculation(' - ');
+    "
+        class="operator"
+      >
+        -
+      </button>
+    </p>
+    <p>
+      <button
+        onclick="
+    updateCalculation('7');
+    "
+      >
+        7
+      </button>
+      <button
+        onclick="
+    updateCalculation('8');
+    "
+      >
+        8
+      </button>
+      <button
+        onclick="
+    updateCalculation('9');
+    "
+      >
+        9
+      </button>
+      <button
+        onclick="
+    updateCalculation(' * ');
+    "
+        class="operator"
+      >
+        *
+      </button>
+    </p>
+    <p>
+      <button
+        onclick="
+    updateCalculation('0');
+    "
+      >
+        0
+      </button>
+      <button
+        onclick="
+    updateCalculation('.');
+    "
+      >
+        .
+      </button>
+      <button
+        onclick="
+    updateCalculation(' / ');
+    "
+        class="operator"
+      >
+        /
+      </button>
+      <button
+        onclick="
+    eval(calculation);
+    calculation = eval(calculation);
+    outputParagraph.innerHTML = (calculation);
+    localStorage.setItem('calculation', calculation);
+    "
+        class="operator"
+      >
+        =
+      </button>
+    </p>
+    <p>
+      <button
+        onclick="
+                outputParagraph.innerHTML = (calculation = '');
+        "
+        class="clear"
+      >
+        Clear
+      </button>
+    </p>
+    <script>
+      let outputParagraph = document.querySelector(".display-paragraph");
+      let calculation = localStorage.getItem("calculation");
+      updateCalculation("");
+      function updateCalculation(value) {
+        outputParagraph.innerHTML = calculation += value;
+        localStorage.setItem("calculation", calculation);
+      }
+    </script>
+  </body>
+</html>

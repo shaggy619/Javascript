@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="project.css" />
+  </head>
+  <body>
+    <!-- Amazon Shipping Calculator html -->
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 Shipping.</p>
+    <p>Orders over $40 = FREE Shipping.</p>
+    <input
+      class="input-value css-input"
+      placeholder="Cost of order"
+      onkeydown="
+      handleEnter(event);
+      "
+    />
+    <button
+      class="calc-button css-calc-button"
+      onclick="
+    calculateTotal();
+    "
+    >
+      Calculate
+    </button>
+    <p class="calc-p"></p>
+
+    <script>
+      // Amazon Shipping Calculator
+      function calculateTotal() {
+        let inputElement = document.querySelector(".input-value");
+        let cost = Number(inputElement.value);
+        if (cost > 0 && cost < 40) {
+          cost = cost + 10;
+          displayCost();
+        } else {
+          displayError();
+        }
+        function displayCost() {
+          let finalCost = document.querySelector(".calc-p");
+          finalCost.innerHTML = `$${cost}`;
+          finalCost.classList.remove("error-message");
+        }
+        function displayError() {
+          let finalCost = document.querySelector(".calc-p");
+          finalCost.innerHTML = "Error: cost cannot be less than $0";
+          finalCost.classList.add("error-message");
+        }
+      }
+      function handleEnter(event) {
+        if (event.key === "Enter") {
+          calculateTotal();
+        }
+      }
+    </script>
+  </body>
+</html>
