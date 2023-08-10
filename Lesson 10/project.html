@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Projects</title>
+    <link rel="stylesheet" href="project.css" />
+  </head>
+  <body>
+    <!-- Subscribe button project html -->
+    <p>YouTube Subscribe Button</p>
+    <button
+      class="sub-button css-button"
+      onclick="isSubscribed()
+    "
+    >
+      Subscribe
+    </button>
+    <br />
+    <br />
+    <br />
+
+    <!-- Rock Paper Scissors -->
+    <p>Rock Paper Scissors</p>
+    <a href="rsp-project.html" target="_blank">Click Here</a>
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <!-- Amazon Shipping Calculator html -->
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 Shipping.</p>
+    <p>Orders over $40 = FREE Shipping.</p>
+    <input
+      class="input-value css-input"
+      placeholder="Cost of order"
+      onkeydown="
+      handleEnter(event);
+      "
+    />
+    <button
+      class="calc-button css-calc-button"
+      onclick="
+    calculateTotal();
+    "
+    >
+      Calculate
+    </button>
+    <p class="calc-p"></p>
+
+    <script src="project.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* For YouTube Subscribe Button */
+.css-button {
+  border: none;
+  color: white;
+  background-color: black;
+  padding: 10px 16px;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.unsubscribe {
+  color: black;
+  background-color: rgb(240, 240, 240);
+}
+
+/* For Amazon Calculator */
+.css-input {
+  font-size: 16px;
+  padding: 10px;
+}
+.css-calc-button {
+  border: none;
+  font-size: 16px;
+  background-color: green;
+  color: white;
+  padding: 12px 15px;
+  cursor: pointer;
+}
