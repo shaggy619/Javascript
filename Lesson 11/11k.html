@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Count Positive Numbers</title>
+  </head>
+  <body>
+    <script>
+      function countPositive(arrayNum) {
+        let positiveNumber = 0;
+        for (let i = 0; i < arrayNum.length; i++) {
+          if (arrayNum[i] > 0) {
+            positiveNumber++;
+          }
+        }
+        return positiveNumber;
+      }
+      let array1 = [1, -3, 5];
+      let array2 = [-2, 3, -5, 7, 10];
+      console.log(countPositive(array1));
+      console.log(countPositive(array2));
+    </script>
+  </body>
+</html>

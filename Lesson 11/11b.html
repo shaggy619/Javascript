@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays</title>
+  </head>
+  <body>
+    <script>
+      function getlastValue(givenArray) {
+        let lastPosition = givenArray.length - 1;
+        let lastvaule = givenArray[lastPosition];
+        return lastvaule;
+      }
+      let array1 = [1, 20, 22, 24, 5];
+      let array2 = ["hi", "hello", "good"];
+      console.log(getlastValue(array1));
+      console.log(getlastValue(array2));
+    </script>
+  </body>
+</html>
