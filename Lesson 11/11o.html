@@ -10,24 +10,32 @@
     <script>
       let array1 = ["hello", "world", "search", "good"];
       let array2 = ["not", "found"];
-      let index;
+      let index1,
+        index2 = -1;
+
+      //For array 1
       for (let i = 0; i < array1.length; i++) {
         if (array1[i] === "search") {
-          index = i;
-        } else {
-          index = -1;
+          index1 = i;
         }
       }
-      console.log(index);
+      if (index1 !== "-1") {
+        console.log(index1);
+      } else {
+        console.log("-1");
+      }
 
+      //For array 2
       for (let i = 0; i < array2.length; i++) {
         if (array2[i] === "search") {
-          index = i;
-        } else {
-          index = -1;
+          index2 = i;
         }
       }
-      console.log(index);
+      if (index2 !== "-1") {
+        console.log(index2);
+      } else {
+        console.log("-1");
+      }
     </script>
   </body>
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deleting last two item from array</title>
+  </head>
+  <body>
+    <script>
+      let eggsRemoved = 0;
+      function removeEggs(food) {
+        let newFood = [];
+
+        //We reversed the items in the array so to only delete the last two egg items.
+        //We use .reverse() method to reverse an array
+        food.reverse();
+        for (let i = 0; i < food.length; i++) {
+          if (food[i] === "egg" && eggsRemoved < 2) {
+            eggsRemoved++;
+          } else {
+            newFood.push(food[i]);
+          }
+        }
+        return newFood;
+      }
+      console.log(removeEggs(["egg", "apple", "egg", "egg", "ham"]));
+    </script>
+  </body>
+</html>
