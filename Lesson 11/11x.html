@@ -1,38 +1,32 @@
 <!DOCTYPE html>
-<html>
-  <head></head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List Final</title>
+    <link rel="stylesheet" href="11x.css" />
+  </head>
   <body>
-    <script>
-      function findIndex(array, word) {
-        for (let i = 0; i < array.length; i++) {
-          if (array[i] === word) {
-            return i;
-          }
-        }
-
-        return -1;
-      }
-
-      function unique(array) {
-        const result = [];
-
-        for (let i = 0; i < array.length; i++) {
-          const word = array[i];
-
-          // Using the findIndex() function from above, we
-          // can check if the string is already in the
-          // result array. If it's not in the result array
-          // (index is -1), then add it to the result array.
-          if (findIndex(result, word) === -1) {
-            result.push(word);
-          }
-        }
-
-        return result;
-      }
-
-      console.log(unique(["green", "red", "blue", "red"]));
-      console.log(unique(["red", "green", "green", "red"]));
-    </script>
+    <!-- Todo List 3 -->
+    <div>
+      <p>Todo List</p>
+      <div class="display-grid">
+        <div>
+          <input type="text" placeholder="Todo name" class="input-text" />
+        </div>
+        <div><input type="date" class="input-date" /></div>
+        <button
+          onclick="
+        addTodo();
+      "
+          class="btn"
+        >
+          Add
+        </button>
+      </div>
+      <div class="display-div"></div>
+    </div>
+    <script src="11x.js"></script>
   </body>
 </html>
