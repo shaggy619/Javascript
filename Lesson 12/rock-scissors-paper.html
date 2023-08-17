@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Improved Rock, Scissor and Paper</title>
+    <link rel="stylesheet" href="rock-scissors-paper.css" />
+  </head>
+  <body>
+    <h2 class="big-font">Rock Scissor Paper</h2>
+    <button
+      onclick="
+      computerMove();
+      playGame('✊');
+    "
+      class="maintain-button"
+    >
+      ✊
+    </button>
+    <button
+      onclick="
+      computerMove();
+      playGame('✌️');
+
+    "
+      class="maintain-button"
+    >
+      ✌️
+    </button>
+    <button
+      onclick="
+      computerMove();
+      playGame('🖐️');
+    "
+      class="maintain-button"
+    >
+      🖐️
+    </button>
+    <p class="win-loss-p"></p>
+    <p class="move-p"></p>
+    <p class="move-p"></p>
+    <p class="result-p"></p>
+
+    <button
+      onclick="
+      console.log('The score was reset successfully!')
+      score.wins = 0;
+      score.losses = 0;
+      score.draws = 0;
+      displayScore();
+    "
+      class="css-reset-btn"
+    >
+      Reset Score
+    </button>
+    <button
+      onclick="
+        autoPlay();
+    "
+      class="autoplay"
+    >
+      Auto Play
+    </button>
+    <script src="rock-scissors-paper.js"></script>
+  </body>
+</html>
