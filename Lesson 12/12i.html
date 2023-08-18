@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social App</title>
+  </head>
+  <body>
+    <button
+      onclick="
+    messages += 1;
+    "
+      class="add"
+    >
+      Add
+    </button>
+    <button
+      onclick="
+    noZero();"
+      class="remove"
+    >
+      Remove
+    </button>
+    <script>
+      let messages = 2;
+      function displayTitle() {
+        setInterval(function () {
+          if (document.title === "Social App") {
+            document.title = `(${messages})New Messages`;
+          } else {
+            document.title = "Social App";
+          }
+        }, 1000);
+      }
+      displayTitle();
+
+      function noZero() {
+        if (messages !== 1) {
+          messages -= 1;
+        }
+      }
+    </script>
+  </body>
+</html>

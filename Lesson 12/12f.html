@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add to Cart Button</title>
+    <style>
+      .btn {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      onclick="
+    addToCart();"
+      class="btn"
+    >
+      Add to Cart
+    </button>
+    <p class="btnMessage"></p>
+    <script>
+      let timeOut;
+      function addToCart() {
+        let paragraphElement = document.querySelector(".btnMessage");
+        paragraphElement.innerHTML = "Added!";
+        clearTimeout(timeOut);
+        timeOut = setTimeout(() => {
+          paragraphElement.innerHTML = "";
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
