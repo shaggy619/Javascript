@@ -1,10 +1,10 @@
 //Rock Scissors Paper Project
-
 let randomNumber = " ";
 let savedMove = "";
 let move = "";
 let result = "";
 let overallResult = "";
+
 //To use value stored in local storage to be loaded first and if the score is null then use the default value as 0.
 let score = JSON.parse(localStorage.getItem("score")) || {
   wins: 0,
@@ -16,15 +16,13 @@ displayScore();
 //For computer move
 function computerMove() {
   randomNumber = Math.random();
-  console.log(randomNumber);
   if (randomNumber >= 0 && randomNumber < 0.33) {
     move = "✊";
   } else if (randomNumber >= 0.33 && randomNumber < 0.66) {
     move = "✌️";
   } else {
-    move = "✊";
+    move = "🖐️";
   }
-  console.log(move);
 }
 
 //For auto playing the game
@@ -33,7 +31,7 @@ let intervalId;
 let autoPlayBtn = document.querySelector(".autoplay");
 function autoPlay() {
   if (!isAuto) {
-    intervalId = setInterval(function () {
+    intervalId = setInterval(() => {
       let move = computerMove();
       playGame(move);
     }, 1000);
@@ -45,6 +43,20 @@ function autoPlay() {
     autoPlayBtn.innerHTML = "Auto Play";
   }
 }
+
+//To also play the game with keyboard
+document.body.addEventListener("keydown", (event) => {
+  if (event.key === "r") {
+    computerMove();
+    playGame("✊");
+  } else if (event.key === "p") {
+    computerMove();
+    playGame("🖐️");
+  } else if (event.key === "s") {
+    computerMove();
+    playGame("✌️");
+  }
+});
 
 //To calculate the result
 function playGame(playerMove) {

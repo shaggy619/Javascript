@@ -14,7 +14,7 @@
       computerMove();
       playGame('✊');
     "
-      class="maintain-button"
+      class="maintain-button rock-button"
     >
       ✊
     </button>
@@ -24,7 +24,7 @@
       playGame('✌️');
 
     "
-      class="maintain-button"
+      class="maintain-button scissor-button"
     >
       ✌️
     </button>
@@ -33,7 +33,7 @@
       computerMove();
       playGame('🖐️');
     "
-      class="maintain-button"
+      class="maintain-button paper-button"
     >
       🖐️
     </button>
@@ -44,7 +44,6 @@
 
     <button
       onclick="
-      console.log('The score was reset successfully!')
       score.wins = 0;
       score.losses = 0;
       score.draws = 0;

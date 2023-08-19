@@ -1,10 +1,23 @@
 const todoList = [];
+const buttonElement = document
+  .querySelector(".btn")
+  .addEventListener("click", () => {
+    addTodo();
+  });
+
+const inputTextElement = document
+  .querySelector(".input-text")
+  .addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      addTodo();
+    }
+  });
 
 renderTodoList();
 
 function renderTodoList() {
   let todoListHTML = "";
-  todoList.forEach(function (todoObject, i) {
+  todoList.forEach((todoObject, i) => {
     const { name, dueDate } = todoObject;
     const html = `
       <div>${name}</div>
