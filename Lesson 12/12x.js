@@ -149,7 +149,7 @@ function hideConfirm() {
   confirmMessageBox.innerHTML = "";
 }
 
-//Yes No button working
+//Reset Button Function
 function resetScore() {
   score.wins = 0;
   score.losses = 0;
