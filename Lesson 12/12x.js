@@ -58,12 +58,18 @@ document.body.addEventListener("keydown", (event) => {
   } else if (event.key === "a") {
     autoPlay();
   } else if (event.key === "Backspace") {
-    score.wins = 0;
-    score.losses = 0;
-    score.draws = 0;
-    displayScore();
+    displayConfirm();
   }
+  //   } else if (event.key === "Backspace") {
+  //     score.wins = 0;
+  //     score.losses = 0;
+  //     score.draws = 0;
+  //     displayScore();
+  //   }
 });
+
+let resetButton = document.querySelector(".reset");
+resetButton.addEventListener("click", displayConfirm);
 
 //To calculate the result
 function playGame(playerMove) {
@@ -129,4 +135,24 @@ function displayResult() {
 function displayMove() {
   let moveP = document.querySelector(".move-p");
   moveP.innerHTML = `You chose <span  class='css-emoji'>${savedMove}</span>- Computer chose <span class='css-emoji'>${move}</span>`;
+}
+
+//Display and confirmation message
+let confirmMessageBox = document.querySelector(".confirm");
+function displayConfirm() {
+  confirmMessageBox.innerHTML = `<p>Are you sure you want to reset the score?
+<button onclick = 'resetScore(); 
+hideConfirm();' class='yes'> Yes </button> <button onclick = 'hideConfirm()' class = "no"> No </button> </p>`;
+}
+
+function hideConfirm() {
+  confirmMessageBox.innerHTML = "";
+}
+
+//Yes No button working
+function resetScore() {
+  score.wins = 0;
+  score.losses = 0;
+  score.draws = 0;
+  displayScore();
 }

@@ -12,15 +12,11 @@
     </style>
   </head>
   <body>
-    <button
-      onclick="
-    addToCart();"
-      class="btn"
-    >
-      Add to Cart
-    </button>
+    <button class="btn">Add to Cart</button>
     <p class="btnMessage"></p>
     <script>
+      let buttonElement = document.querySelector(".btn");
+      buttonElement.addEventListener("click", addToCart);
       function addToCart() {
         let paragraphElement = document.querySelector(".btnMessage");
         paragraphElement.innerHTML = "Added!";

@@ -4,20 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Social App</title>
+    <title>Filter</title>
   </head>
   <body>
     <script>
-      function displayTitle() {
-        setInterval(() => {
-          if (document.title === "Social App") {
-            document.title = "(2)New Messages";
-          } else {
-            document.title = "Social App";
+      function removeEgg(foods) {
+        return foods.filter((food) => {
+          if (food !== "egg") {
+            return food;
           }
-        }, 1000);
+        });
       }
-      displayTitle();
+      console.log(removeEgg(["egg", "apple", "egg", "egg", "ham"]));
     </script>
   </body>
 </html>

@@ -12,18 +12,13 @@
     </style>
   </head>
   <body>
-    <button
-      onclick="
-    changeText();
-    "
-      class="btn"
-    >
-      Finish
-    </button>
+    <button class="btn">Finish</button>
     <script>
+      let buttonElement = document.querySelector(".btn");
+      buttonElement.addEventListener("click", changeText);
       function changeText() {
         let buttonElement = document.querySelector(".btn");
-        setTimeout(function () {
+        setTimeout(() => {
           buttonElement.innerHTML = "Finished!";
         }, 1000);
       }

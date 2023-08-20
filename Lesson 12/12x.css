@@ -1,0 +1,7 @@
+.yes,
+.no {
+  padding: 8px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 5px;
+}
